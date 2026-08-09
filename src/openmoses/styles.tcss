@@ -1,220 +1,206 @@
-$om-bg: #0a0c0b;
-$om-panel: #0f1210;
-$om-panel-raised: #141814;
-$om-line: #283028;
-$om-line-soft: #1d231e;
-$om-text: #ecf2e9;
-$om-muted: #879287;
+$om-bg: #090b0a;
+$om-panel: #0e110f;
+$om-raised: #141814;
+$om-line: #252b26;
+$om-line-soft: #1b201c;
+$om-text: #e8eee6;
+$om-muted: #899288;
 $om-faint: #596259;
 $om-lime: #d6ff52;
-$om-green: #75e79d;
-$om-blue: #79c8ff;
-$om-orange: #ffb86b;
 
 Screen {
     background: $om-bg;
     color: $om-text;
-    layout: vertical;
 }
 
-#topbar {
+#dashboard {
+    width: 100%;
+    height: 100%;
+    align: center middle;
+}
+
+#dashboard-content {
+    width: 84;
+    height: auto;
+    max-height: 39;
+}
+
+#dashboard-art {
+    width: 100%;
+    height: 12;
+    content-align: center middle;
+    color: #9ba899;
+}
+
+#wordmark {
+    width: 100%;
+    height: 2;
+    content-align: center middle;
+    color: $om-lime;
+    text-style: bold;
+    border-bottom: solid $om-line;
+}
+
+#tagline {
+    width: 100%;
+    height: 2;
+    content-align: center middle;
+    color: $om-muted;
+}
+
+#dashboard-menu {
+    width: 100%;
+    height: 15;
+    margin-top: 1;
+    background: transparent;
+    border: none;
+    scrollbar-size: 0 0;
+}
+
+.dashboard-menu-item {
+    width: 100%;
     height: 4;
     min-height: 4;
-    background: #0c0f0d;
+    layout: horizontal;
+    background: $om-bg;
+    color: $om-text;
+    padding: 0 1;
+}
+
+#dashboard-menu:focus > .dashboard-menu-item.-highlight {
+    background: $om-lime;
+    color: #0a0d09;
+    border-left: thick $om-lime;
+}
+
+#dashboard-menu:focus > .dashboard-menu-item.-highlight .menu-key,
+#dashboard-menu:focus > .dashboard-menu-item.-highlight .menu-title,
+#dashboard-menu:focus > .dashboard-menu-item.-highlight .menu-description,
+#dashboard-menu:focus > .dashboard-menu-item.-highlight .menu-arrow {
+    color: #0a0d09;
+}
+
+.menu-key {
+    width: 5;
+    height: 3;
+    content-align: center middle;
+    color: $om-lime;
+    text-style: bold;
+}
+
+.menu-copy {
+    width: 1fr;
+    height: 3;
+    padding-top: 1;
+}
+
+.menu-title {
+    height: 1;
+    color: $om-text;
+    text-style: bold;
+}
+
+.menu-description {
+    height: 1;
+    color: $om-faint;
+}
+
+.menu-arrow {
+    width: 3;
+    height: 3;
+    content-align: center middle;
+    color: $om-faint;
+}
+
+#dashboard-hint {
+    width: 100%;
+    height: 3;
+    content-align: center middle;
+    color: $om-faint;
+}
+
+#dashboard-status {
+    dock: bottom;
+    width: 100%;
+    height: 2;
+    content-align: center middle;
+    color: $om-faint;
+    border-top: solid $om-line-soft;
+}
+
+.minimal-header {
+    width: 100%;
+    height: 3;
+    min-height: 3;
     border-bottom: solid $om-line;
     padding: 0 2;
     align: left middle;
 }
 
-Brand {
-    width: 30;
-    height: 3;
-    layout: horizontal;
-    align: left middle;
-}
-
-.brand-mark {
-    width: 5;
-    height: 3;
-    background: $om-lime;
-    color: #11150e;
-    text-style: bold;
-    content-align: center middle;
-    margin-right: 1;
-}
-
-.brand-copy {
-    width: auto;
-    height: 3;
-}
-
-.brand-name {
+.mini-brand {
+    width: 4;
     height: 1;
-    color: $om-text;
-    text-style: bold;
-}
-
-.brand-caption {
-    height: 1;
-    color: $om-muted;
-}
-
-#project-path {
-    width: 1fr;
-    color: $om-muted;
-}
-
-#connection-status {
-    width: auto;
-    height: 1;
-    color: $om-muted;
-}
-
-.online-dot {
-    width: 2;
-    color: $om-green;
-}
-
-#workspace {
-    height: 1fr;
-}
-
-#sidebar {
-    width: 28;
-    min-width: 24;
-    height: 100%;
-    background: $om-panel;
-    border-right: solid $om-line;
-    padding: 1;
-}
-
-#new-session {
-    width: 100%;
-    height: 3;
-    background: $om-lime;
-    color: #10140d;
-    border: none;
-    text-style: bold;
-    margin-bottom: 1;
-}
-
-#new-session:hover,
-#new-session:focus {
-    background: #e3ff82;
-    text-style: bold;
-}
-
-.section-label {
-    height: 2;
-    color: $om-faint;
-    text-style: bold;
-    padding: 1 1 0 1;
-}
-
-.nav-item {
-    height: 2;
-    padding: 0 1;
-    color: $om-muted;
-}
-
-.nav-item.active {
     color: $om-lime;
-    background: #182016;
-    border-left: thick $om-lime;
-}
-
-.sessions-label {
-    margin-top: 1;
-}
-
-.session {
-    height: 3;
-    padding: 0 1;
-    color: $om-muted;
-    margin-bottom: 1;
-}
-
-.active-session {
-    color: $om-text;
-    background: $om-panel-raised;
-    border-left: thick #556155;
-}
-
-#version {
-    dock: bottom;
-    height: 2;
-    color: $om-faint;
-    padding: 0 1;
-}
-
-#main-panel {
-    width: 1fr;
-    min-width: 42;
-    height: 100%;
-    background: $om-bg;
-}
-
-#session-header {
-    height: 5;
-    border-bottom: solid $om-line-soft;
-    padding: 1 2;
-    align: left middle;
-}
-
-#session-title-group {
-    width: 1fr;
-    height: 3;
-}
-
-#session-title {
-    height: 1;
     text-style: bold;
+}
+
+.minimal-title {
+    width: 1fr;
+    height: 1;
     color: $om-text;
 }
 
-#session-subtitle {
+.minimal-action {
+    width: auto;
     height: 1;
     color: $om-muted;
 }
 
-#session-menu {
-    width: 5;
-    height: 3;
-    background: transparent;
-    color: $om-muted;
-    border: tall $om-line;
+#chat-page,
+#settings-page {
+    width: 100%;
+    height: 100%;
+}
+
+#settings-page {
+    align-horizontal: center;
 }
 
 #conversation {
+    width: 100%;
     height: 1fr;
-    padding: 2 4;
+    padding: 2 8;
     scrollbar-size: 1 1;
-    scrollbar-color: #414a40 transparent;
+    scrollbar-color: #3d463e transparent;
 }
 
-.conversation-kicker {
-    height: 2;
-    color: $om-faint;
-    text-style: bold;
-    margin-bottom: 1;
+#chat-empty-state {
+    width: 100%;
+    height: auto;
+    margin-top: 5;
+    color: $om-muted;
+    text-align: center;
 }
 
 .message {
     width: 100%;
     height: auto;
-    min-height: 5;
-    background: $om-panel;
-    border-left: thick $om-lime;
-    padding: 1 2;
+    padding: 1 0;
     margin-bottom: 1;
+    border-bottom: solid $om-line-soft;
 }
 
 .user-message {
-    background: #111613;
-    border-left: thick #536053;
+    border-left: thick $om-line;
+    padding-left: 2;
 }
 
-.message-meta {
+.assistant-message {
+    border-left: thick $om-lime;
+    padding-left: 2;
+}
+
+.message-header {
     height: 1;
     margin-bottom: 1;
 }
@@ -232,232 +218,93 @@ Brand {
 }
 
 .message-body {
+    width: 100%;
     height: auto;
-    color: #cbd3c9;
+    color: #c9d0c7;
 }
 
 #composer-wrap {
-    height: 6;
-    margin: 0 3 1 3;
-    background: $om-panel-raised;
-    border: tall $om-line;
-    padding: 0 1;
+    width: 100%;
+    height: 5;
+    min-height: 5;
+    dock: bottom;
+    background: $om-panel;
+    border-top: solid $om-line;
+    padding: 0 2;
 }
 
 #composer {
+    width: 100%;
     height: 3;
     background: transparent;
-    border: none;
     color: $om-text;
-    padding: 0 1;
+    border: none;
+    padding: 0;
 }
 
 #composer:focus {
     border: none;
 }
 
-#composer-wrap:focus-within {
-    border: tall #64745e;
+#composer-meta {
+    width: 100%;
+    height: 1;
+    color: $om-faint;
 }
 
-#composer-meta {
-    height: 1;
-    padding: 0 1;
-    color: $om-faint;
+.command-hints {
+    width: 1fr;
 }
 
 .send-hint {
-    width: 1fr;
-    text-align: right;
+    width: auto;
     color: $om-muted;
 }
 
-#inspector {
-    width: 36;
-    min-width: 32;
-    height: 100%;
-    background: $om-panel;
-    border-left: solid $om-line;
-    padding: 0 1;
-    overflow-y: auto;
+#settings-content {
+    width: 80;
+    max-width: 90%;
+    height: auto;
+    margin: 3 0;
 }
 
-.inspector-label {
-    padding-left: 0;
+#settings-title {
+    width: 100%;
+    height: 2;
+    color: $om-text;
+    text-style: bold;
+}
+
+#settings-description {
+    width: 100%;
+    height: 2;
+    color: $om-muted;
+    border-bottom: solid $om-line;
+}
+
+#settings-list {
+    width: 100%;
+    height: auto;
     margin-top: 1;
 }
 
-#orchestrator-card {
-    height: auto;
-    background: $om-panel-raised;
-    border: tall $om-line;
+.settings-item {
+    width: 100%;
+    height: 3;
     padding: 1;
+    border-bottom: solid $om-line-soft;
+    color: #c9d0c7;
 }
 
-.orchestrator-heading {
+#settings-note {
+    width: 100%;
     height: 3;
-}
-
-.orchestrator-avatar {
-    width: 5;
-    height: 3;
-    background: $om-lime;
-    color: #10140d;
-    text-style: bold;
-    content-align: center middle;
-    margin-right: 1;
-}
-
-.orchestrator-copy {
-    height: 3;
-}
-
-.orchestrator-name {
-    height: 1;
-    color: $om-text;
-    text-style: bold;
-}
-
-.orchestrator-model {
-    height: 1;
-    color: $om-muted;
-}
-
-.orchestrator-description {
-    height: auto;
-    color: #aeb8ac;
-    margin: 1 0;
-}
-
-.stats {
-    height: 3;
-    border-top: solid $om-line-soft;
+    color: $om-faint;
     padding-top: 1;
-}
-
-Stat {
-    width: 1fr;
-    height: 2;
-    layout: horizontal;
-}
-
-.stat-value {
-    width: auto;
-    color: $om-lime;
-    text-style: bold;
-    margin-right: 1;
-}
-
-.stat-label {
-    width: auto;
-    color: $om-faint;
-}
-
-#agent-list {
-    height: auto;
-}
-
-.agent-row {
-    height: 4;
-    layout: horizontal;
-    border-bottom: solid $om-line-soft;
-    padding: 1 0;
-}
-
-.agent-dot {
-    width: 3;
-    color: $om-green;
-}
-
-.status-waiting {
-    color: $om-orange;
-}
-
-.agent-copy {
-    width: 1fr;
-    height: 2;
-}
-
-.agent-heading {
-    height: 1;
-}
-
-.agent-name {
-    width: auto;
-    color: $om-text;
-    text-style: bold;
-    margin-right: 1;
-}
-
-.agent-role {
-    width: 1fr;
-    color: $om-faint;
-    text-align: right;
-}
-
-.agent-model {
-    height: 1;
-    color: $om-muted;
-}
-
-#queue-heading {
-    height: 3;
-    align: left bottom;
-}
-
-#queue-heading .section-label {
-    width: 1fr;
-}
-
-.queue-count {
-    width: auto;
-    color: $om-faint;
-    padding-bottom: 1;
-}
-
-#task-list {
-    height: auto;
-}
-
-.task-row {
-    height: 4;
-    layout: horizontal;
-    border-bottom: solid $om-line-soft;
-    padding: 1 0;
-}
-
-.task-index {
-    width: 4;
-    color: $om-faint;
-}
-
-.task-active .task-index {
-    color: $om-lime;
-}
-
-.task-done .task-title {
-    color: $om-muted;
-    text-style: strike;
-}
-
-.task-copy {
-    width: 1fr;
-    height: 2;
-}
-
-.task-title {
-    height: 1;
-    color: $om-text;
-}
-
-.task-owner {
-    height: 1;
-    color: $om-faint;
 }
 
 Footer {
     height: 1;
-    background: #121612;
+    background: $om-panel;
     color: $om-muted;
 }
-

@@ -5,12 +5,12 @@ agents. It is being built in small, reviewable milestones.
 
 ## Current milestone: TUI foundation
 
-The first milestone establishes the visual language and information architecture:
+The first milestone establishes a compact, keyboard-first product shell:
 
-- project and session navigation;
-- central orchestration chat;
-- visible orchestrator, specialist agents, and task queue;
-- keyboard-first interaction;
+- Neovim-inspired launch dashboard;
+- distraction-free, full-width orchestration chat;
+- slash commands for agents, models, skills, and tools;
+- keyboard and mouse navigation;
 - domain models kept separate from UI widgets.
 
 The agents and conversation are simulated in this milestone. No API keys are read
@@ -19,12 +19,16 @@ and no model provider is called yet.
 ## Run locally
 
 ```bash
-uv sync
-uv run openmoses
+make setup
+make dev
 ```
 
-Inside the app, use `Ctrl+N` for a new session, `Ctrl+P` for the command palette,
-and `Ctrl+Q` to quit.
+`make dev` opens the Openmoses interface directly in the current terminal.
+
+Inside the dashboard, navigate with `↑`/`↓` or `j`/`k`, and press `Enter` to
+select. Direct shortcuts `n`, `a`, `m`, `s`, and `t` open each destination. In
+chat, use `/help` to list commands, `Esc` to return home, and `Ctrl+Q` to quit.
+`Ctrl+C` also closes the application immediately.
 
 ## Planned milestones
 
