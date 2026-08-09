@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "openmoses"
+version = "0.1.0"
+description = "A terminal-first workspace for orchestrating AI coding agents."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "textual>=0.89",
+]
+
+[project.scripts]
+openmoses = "openmoses.app:main"
+
+[dependency-groups]
+dev = [
+  "pytest-asyncio>=0.25",
+  "pytest>=8.3",
+  "ruff>=0.9",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/openmoses"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
